@@ -26,6 +26,8 @@ async def add_author_service(author: AuthorM, db: "Session") -> AuthorM:
     except Exception as error:
         raise AuthorExisted
 
+    return db_author
+
 
 async def get_books_service(db: "Session") -> List[BookM]:
     try:
